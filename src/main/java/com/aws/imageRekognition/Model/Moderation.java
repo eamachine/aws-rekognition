@@ -1,51 +1,57 @@
 package com.aws.imageRekognition.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Moderation {
 
-    private boolean IsAdultScore;
+    private boolean IsAdultContent;
     private double AdultScore;
-    private boolean IsSpicy;
+    private boolean IsSpicyContent;
     private double SpicyScore;
     private List<ModerationLabel> ModerationLabelList;
 
     public Moderation(boolean isAdultScore, double adultScore, boolean isSpicy, double isSpicyScore, List<ModerationLabel> moderationLabelList) {
-        IsAdultScore = isAdultScore;
+        IsAdultContent = isAdultScore;
         AdultScore = adultScore;
-        IsSpicy = isSpicy;
+        IsSpicyContent = isSpicy;
         SpicyScore = isSpicyScore;
         ModerationLabelList = moderationLabelList;
     }
 
-    public boolean isAdultScore() {
-        return IsAdultScore;
+    public boolean isAdultContent() {
+        return IsAdultContent;
     }
 
-    public void setAdultScore(boolean adultScore) {
-        IsAdultScore = adultScore;
+    @JsonProperty("IsAdultContent")
+    public void setAdultContent(boolean adultContent) {
+        IsAdultContent = adultContent;
     }
 
     public double getAdultScore() {
         return AdultScore;
     }
 
+    @JsonProperty("AdultScore")
     public void setAdultScore(double adultScore) {
         AdultScore = adultScore;
     }
 
-    public boolean isSpicy() {
-        return IsSpicy;
+    public boolean isSpicyContent() {
+        return IsSpicyContent;
     }
 
-    public void setSpicy(boolean spicy) {
-        IsSpicy = spicy;
+    @JsonProperty("IsSpicyContent")
+    public void setSpicyContent(boolean spicyContent) {
+        IsSpicyContent = spicyContent;
     }
 
     public double getIsSpicyScore() {
         return SpicyScore;
     }
 
+    @JsonProperty("SpicyScore")
     public void setIsSpicyScore(double isSpicyScore) {
         SpicyScore = isSpicyScore;
     }
